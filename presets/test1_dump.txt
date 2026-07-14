@@ -1,0 +1,50 @@
+=== GENERAL ===
+PointsToWin=5000
+AirdropEnabled=true
+AirdropIntervalSeconds=300
+AirdropCaptureSeconds=30
+NeutralParticle=minecraft:dragon_breath
+BaseZoneParticle=minecraft:cherry_leaves
+BaseZoneParticlesEnabled=true
+
+=== ECONOMY ===
+KillRewardPersonal=100
+KillRewardTeam=150
+HoldPointPersonalPerSecond=15
+HoldPointTeamPerSecond=25
+HoldRewardIntervalSeconds=1
+HoldPersonalMode=ALL_MEMBERS
+
+=== POINTS (3) ===
+мбдоу_№4 | МБДОУ №4 | radius=30 | center=232,-22,139
+рынок | Рынок | radius=25 | center=228,-22,321
+двор | Двор | radius=45 | center=225,-22,-34
+
+=== BASES (2) ===
+всрф | team=Blue | radius=20 | center=-39,-23,112
+nato | team=Red | radius=20 | center=577,-22,119
+
+=== AIRDROP SPAWNS (5) ===
+мдоу_№4_подъезды | center=227,-22,198 | radius=5
+перекрёсток | center=308,-22,52 | radius=5
+глав._вход_на_рынок | center=226,-22,289 | radius=5
+стройка | center=104,-15,308 | radius=5
+гаражи | center=155,-22,92 | radius=5
+
+=== AIRDROP LOOT (6) ===
+air_money_500 | 500 личных | weight=50 | type=PERSONAL_MONEY | payload= | count=500
+air_money_1000 | 1000 личных | weight=25 | type=PERSONAL_MONEY | payload= | count=1000
+air_money_2500 | 2500 личных | weight=10 | type=PERSONAL_MONEY | payload= | count=2500
+air_handgun_box | Коробка пистолетных | weight=8 | type=ITEM | payload=superbwarfare:handgun_ammo_box | count=1
+air_rifle_box | Коробка винтовочных | weight=4 | type=ITEM | payload=superbwarfare:rifle_ammo_box | count=1
+air_shotgun_box | Коробка дробовик | weight=3 | type=ITEM | payload=superbwarfare:shotgun_ammo_box | count=1
+
+=== SHOP BLOCKS ===
+sbw_p_stone | Камень | cost=300 | class=ALL | item=minecraft:stone
+sbw_p_oak_log | Дубовое бревно | cost=250 | class=ALL | item=minecraft:oak_log
+sbw_p_spruce_log | Еловое бревно | cost=250 | class=ALL | item=minecraft:spruce_log
+sbw_p_coal_block | Угольный блок | cost=500 | class=ALL | item=minecraft:coal_block
+sbw_p_charging_station | [Т] Зарядная станция | cost=450 | class=ENGINEER | item=superbwarfare:charging_station
+
+=== SHOP TOTAL OFFERS ===
+105

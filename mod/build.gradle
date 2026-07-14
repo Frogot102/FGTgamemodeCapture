@@ -1,0 +1,74 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.107'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = jar_name
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+    }
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    def replaceProperties = [
+            mod_id     : mod_id,
+            mod_name   : mod_name,
+            mod_version: mod_version,
+            jar_name   : jar_name
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.register('patchTest1Preset', JavaExec) {
+    dependsOn classes
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.zov.zovcapture.tools.PresetPatcher'
+    workingDir = layout.projectDirectory.asFile.parentFile
+    args = [workingDir.absolutePath]
+}
+
+tasks.register('dumpTest1Preset', JavaExec) {
+    dependsOn classes
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'com.zov.zovcapture.tools.PresetDumper'
+    workingDir = layout.projectDirectory.asFile.parentFile
+    args = [new File(workingDir, 'zovcapture/presets/test1.dat').absolutePath]
+}

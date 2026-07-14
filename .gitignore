@@ -1,0 +1,39 @@
+# Gradle / NeoForge
+.gradle/
+build/
+out/
+bin/
+*.log
+build-out.txt
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.launch
+.settings/
+.classpath
+.project
+
+# Decompile / local artifacts (do not commit)
+net/
+META-INF/
+shops/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Minecraft runtime (not part of repo)
+session.lock
+**/session.lock
+
+# Map — optional local player junk (already stripped in repo copy)
+map/**/playerdata/
+map/**/stats/
+map/**/advancements/
+
+# Secrets
+*.env
+credentials.json
