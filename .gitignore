@@ -37,3 +37,11 @@ map/**/advancements/
 # Secrets
 *.env
 credentials.json
+
+# Playable modpack binaries (ship via GitHub Releases, not git)
+modpack/profile/mods/*.jar
+modpack/profile/config/
+modpack/profile/resourcepacks/
+modpack/profile/options.txt
+modpack/profile/zovcapture/
+release/FGT-ZOV-pack-playable.zip

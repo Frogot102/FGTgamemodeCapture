@@ -13,18 +13,32 @@
 | [`mod/`](mod/) | Исходники NeoForge-мода (Gradle) |
 | [`map/MapForPack/`](map/MapForPack/) | Готовая карта для матчей |
 | [`presets/`](presets/) | Пресет `test1` — точки, базы, экономика, аirdrop |
-| [`release/`](release/) | Собранный JAR для игры без сборки |
+| [`release/`](release/) | Собранный JAR + **ZIP со всей сборкой** для Modrinth |
+| [`modpack/`](modpack/) | Моды, конфиги, ресурспаки профиля ZOV pack |
 | [`docs/GUIDE.ru.md`](docs/GUIDE.ru.md) | Подробный гайд на русском |
 
 ---
 
 ## Быстрый старт (игрок / админ)
 
+### Скачать и играть (вся сборка)
+
+1. Открой **[Releases](https://github.com/Frogot102/FGTgamemodeCapture/releases)** на GitHub.
+2. Скачай **`FGT-ZOV-pack-playable.zip`**.
+3. Распакуй в `AppData\Roaming\ModrinthApp\profiles\FGT-ZOV-pack`.
+4. В Modrinth App добавь профиль **FGT-ZOV-pack** (NeoForge 1.21.1).
+5. Запусти мир **MapForPack** и введи команды ниже.
+
+Подробнее: [modpack/README.md](modpack/README.md)
+
+### Ручная установка (только мод + карта)
+
 1. Установи **NeoForge 1.21.1** и модпак с **Superb Warfare**, **AshVehicle** и зависимостями.
 2. Скопируй `release/FGTgamemodeCapture-*.jar` в папку `mods` профиля.
 3. Положи карту `map/MapForPack` в `saves/MapForPack`.
 4. Скопируй `presets/test1.dat` в `<профиль>/zovcapture/presets/test1.dat`.
 5. Запусти мир и выполни:
+
    ```
    /FGTgmC preset load test1
    /FGTgmC shop reload
